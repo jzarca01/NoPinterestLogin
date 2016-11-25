@@ -1,0 +1,20 @@
+{
+    "name": "No Pinterest Login!",
+    "version": "1.0",
+    "manifest_version": 2,
+    "description": "Disable login to browse.",
+    "homepage_url": "http://github.com/jzarca01",
+    "browser_action": {
+        "default_icon": "icon.png"
+    },
+    "permissions": [
+        "tabs", "http://www.pinterest.com/*"
+    ],  
+    "content_scripts": [
+        {
+            "matches": ["https://www.pinterest.com/*", "https://*.pinterest.com/*" ],
+            "run_at": "document_idle",
+            "js": ["myscript.js"]
+        }
+    ]
+}
